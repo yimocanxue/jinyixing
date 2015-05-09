@@ -18,38 +18,9 @@
 <link rel="stylesheet" type="text/css" href="lib/css/icons.min.css" />
 <link rel="stylesheet" type="text/css" href="lib/css/af.ui.css" />
 
-<script type="text/javascript" charset="utf-8" src="lib/vender/jquery.min.js"></script>
-<script type="text/javascript" charset="utf-8" src="lib/vender/fastclick.js"></script>
-<script type="text/javascript" charset="utf-8" src="lib/af.shim.js"></script>
-<script type="text/javascript" charset="utf-8" src="lib/af.ui.js"></script>
-
-<script type="text/javascript" charset="utf-8" src="lib/plugin/af.actionsheet.js"></script>
-<script type="text/javascript" charset="utf-8" src="lib/plugin/af.animation.js"></script>
-<script type="text/javascript" charset="utf-8" src="lib/plugin/af.touchEvents.js"></script>
-<script type="text/javascript" charset="utf-8" src="lib/plugin/af.popup.js"></script>
-<script type="text/javascript" charset="utf-8" src="lib/plugin/af.drawer.js"></script>
-<script type="text/javascript" charset="utf-8" src="lib/plugin/af.toast.js"></script>
-<script type="text/javascript" charset="utf-8" src="lib/plugin/af.animateheader.js"></script>
-<script type="text/javascript" charset="utf-8" src="lib/plugin/af.splashscreen.js"></script>
-<script type="text/javascript" charset="utf-8" src="lib/plugin/af.swipereveal.js"></script>
-<script type="text/javascript" charset="utf-8" src="lib/plugin/af.lockscreen.js"></script>
+<script type="text/javascript" data-main="lib/app.js" charset="utf-8" src="lib/require.js"></script>
 
 
-<script type="text/javascript">
-
-	$.afui.useOSThemes=false;		//是否使用系统内置主题 如果要使用自定义主题必须设置为false且在$(document).ready()之前设置
-	$.afui.loadDefaultHash=true;	//APP启动时从hash纪录中打开页面
-	$.afui.autoLaunch=false;
-	
-	
-	$(document).ready(function(){
-	$.afui.launch();
-	});
-	
-	//if($.os.ios)
-	$.afui.animateHeader(true);
-
-</script>
 </head>
 
 <body class="ios7">
