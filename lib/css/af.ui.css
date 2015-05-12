@@ -2641,7 +2641,7 @@ li .icon:before {
   font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .ios .view header {
-  background: #f8f8f8;
+  background:url(../img/bg_header.png) repeat-x;
   color: inherit;
   border: none;
   border-bottom: 1px solid #c8c7cc;

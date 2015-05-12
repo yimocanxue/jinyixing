@@ -8,13 +8,20 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="format-detection" content="telephone=no">
 <meta content="email=no" name="format-detection" />
+
+<!--禁止浏览器从本地计算机的缓存中访问页面内容-->
+<META HTTP-EQUIV="pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+<META HTTP-EQUIV="expires" CONTENT="0">
+
 <!--设置状态栏样式-->
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<!--禁止浏览器从本地计算机的缓存中访问页面内容-->
-<meta HTTP-EQUIV="Pragma" CONTENT="no-cache">
+
 
 <link rel="stylesheet" type="text/css" href="lib/css/icons.min.css" />
 <link rel="stylesheet" type="text/css" href="lib/css/af.ui.css" />
+<link rel="stylesheet" type="text/css" href="lib/css/app.css" />
 
 <script type="text/javascript" data-main="lib/app.js" charset="utf-8" src="lib/require.js"></script>
 
@@ -40,8 +47,13 @@
         
         <!--公共头部开始-->
         <header>
-        	<div style="width:60%; float:left; padding-left:30px;"><img src="lib/img/logo.png" height="35" /></div>
-            <h1>金易行</h1>
+        	<div class="jui-header-logo">
+            	<img src="lib/img/logo_name.png" height="35" />
+            </div>
+            <h1></h1>
+            <div class="jui-header-menubtn">
+            	<a href="javascript:void(0)" onclick="$.afui.drawer.show('#subnav','right','push')"><img src="lib/img/icon_menu_more.png" height="20" /></a>
+            </div>
         </header>
         <!--公共头部结束-->
         
@@ -49,41 +61,79 @@
         <!--主内容区开始-->
         <div class="pages">
         
-            <div data-left-drawer="left" class="panel" id="main" data-title="金易行" data-selected="true">
-            <p id='main_info'>Welcome to the kitchen sink demo for App Framework UI. Here you will find samples of how to use the App Framework UI. Please select an option from below.</p>
-                    <ul class="list">
-                        <li>
-                            <a href="#afuidemo/foo/bar/something">App Framework UI</a>
-                        </li>
-                        <li>
-                            <a href="#plugins">Plugins</a>
-                        </li>
-                        <li>
-                            <a href="index.html" data-ignore="true">App Framework theme</a>
-                        </li>
-                         <li>
-                            <a href="index.html?ios7" data-ignore="true">iOS theme</a>
-                        </li>
-                        <li>
-                            <a href="index.html?android" data-ignore="true">Android theme</a>
-                        </li>
-                        <li>
-                            <a href="index.html?win8" data-ignore="true">Win8 theme</a>
-                        </li>
-                        <li>
-                            <a href="index.html?bb" data-ignore="true">BB10 theme</a>
-                        </li>
-
-                         <li>
-                            <a href="index.html?tizen" data-ignore="true">tizen</a>
-                        </li>
-                        <li>
-                            <a href="index.html?firefox" data-ignore="true">firefox</a>
-                        </li>
-
-
-                    </ul>
+            <div data-left-drawer="left" class="panel" id="main" data-title="">
+				
+                <div class="jui-main-wrap">
+  					<div class="jui-main-weather"></div>
+                    <div class="jui-main-card">
+                        <table>
+                            <tr>
+                                <td>
+                                	<div class="jui-main-headimg"><img src="lib/img/icon_user_nologin.png"/></div>
+                                    <div class="jui-main-username">134***7636</div>
+                                </td>
+                                <td>
+                                	<div class="jui-main-cardno">卡号：134***7636</div>
+                                    <div class="jui-main-cardimg"><img src="lib/img/pic_main_card.png"/></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="jui-main-data">
+                      <table cellspacing="1">
+                        <tr>
+                            <td>
+                            	<div class="jui-main-dataitem">1400km</div>
+                            </td>
+                            <td>B</td>
+                            <td>C</td>
+                        </tr>
+                    </table>
+                    </div>                
+                </div>
+  				
+                <!--首页主导航开始-->
+                <table id="jui-main-nav"  cellspacing="1">
+                	<tr>
+                    	<td>
+                            <div class="jui-main-menuwrap">
+                            	<img src="lib/img/icon_menu_wycz.png"/>
+                            </div>
+                        </td>
+                        <td>
+                        	<div class="jui-main-menuwrap">
+                            	<img src="lib/img/icon_menu_kpgl.png"/>
+                            </div>
+                        </td>
+                        <td>
+                        	<div class="jui-main-menuwrap">
+                            <img src="lib/img/icon_menu_yzd.png"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                        	<div class="jui-main-menuwrap">
+                            	<img src="lib/img/icon_menu_txjl.png"/>
+                            </div>
+                        </td>
+                        <td>
+                        	<div class="jui-main-menuwrap">
+                            	<img src="lib/img/icon_menu_gsfl.png"/>
+                            </div>
+                        </td>
+                        <td>
+                        	<div class="jui-main-menuwrap" style="position:relative;">
+                                <img src="lib/img/icon_menu_wdxx.png"/>
+                                <span class="af-badge">5</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <!--首页主导航结束-->
+                
             </div>
+            
             <div data-left-drawer="left" class="panel" id="plugins" data-title="plugins" >
                 <ul class="list">
                     <li><a href="#login" data-transition="up-reveal">Login View (modal)</a></li>
@@ -106,20 +156,7 @@
         
         
         <!--侧边菜单开始-->
-        <nav id="left"  style="z-index:5" data-include="partials/leftnav.html"></nav>
-        <nav id="right">
-            <div class="view active" id="navView2">
-                <header>
-                    <h1>What</h1>
-                </header>
-                <div class="pages">
-
-                    <div class="panel active" id="rightNav" data-title="Foobar">
-                        This is the right nav
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <nav id="subnav"  style="z-index:5" data-include="partials/subnav.html"></nav>
         <!--侧边菜单结束-->
         
     </div>
