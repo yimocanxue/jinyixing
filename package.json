@@ -1,0 +1,20 @@
+{
+  "name": "jinyixing",
+  "version": "1.0.0",
+  "description": "金易行充值APP UI界面",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yimocanxue/jinyixing.git"
+  },
+  "author": "xuhui",
+  "homepage": "https://github.com/yimocanxue/jinyixing",
+  "devDependencies":{
+    "grunt":"~0.4.5",
+    "grunt-contrib-jshint":"~0.11.2",
+    "grunt-contrib-uglify":"~0.9.1",
+    "grunt-contrib-clean":"~0.6.0",
+    "grunt-contrib-cssmin":"~0.12.3",
+    "grunt-contrib-htmlmin":"~0.4.0",
+    "grunt-contrib-imagemin":"~0.9.4"
+  }
+}
