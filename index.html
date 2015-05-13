@@ -8,24 +8,15 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="format-detection" content="telephone=no">
 <meta content="email=no" name="format-detection" />
-
 <!--禁止浏览器从本地计算机的缓存中访问页面内容-->
 <META HTTP-EQUIV="pragma" CONTENT="no-cache">
-<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
-<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
-<META HTTP-EQUIV="expires" CONTENT="0">
-
 <!--设置状态栏样式-->
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-
 
 <link rel="stylesheet" type="text/css" href="lib/css/icons.min.css" />
 <link rel="stylesheet" type="text/css" href="lib/css/af.ui.css" />
 <link rel="stylesheet" type="text/css" href="lib/css/app.css" />
-
 <script type="text/javascript" data-main="lib/app.js" charset="utf-8" src="lib/require.js"></script>
-
-
 </head>
 
 <body class="ios">
@@ -52,7 +43,7 @@
             </div>
             <h1></h1>
             <div class="jui-header-menubtn">
-            	<a href="javascript:void(0)" onclick="$.afui.drawer.show('#subnav','right','push')"><img src="lib/img/icon_menu_more.png" height="20" /></a>
+            	<a href="javascript:void(0)"><img src="lib/img/icon_menu_more.png" height="20" /></a>
             </div>
         </header>
         <!--公共头部结束-->
@@ -61,7 +52,7 @@
         <!--主内容区开始-->
         <div class="pages">
         
-            <div data-left-drawer="left" class="panel" id="main" data-title="">
+            <div class="panel" id="main" data-title="">
 				
                 <div class="jui-main-wrap">
   					<div class="jui-main-weather"></div>
@@ -84,9 +75,16 @@
                         <tr>
                             <td>
                             	<div class="jui-main-dataitem">1400km</div>
+                                <div class="jui-main-databtn">月总里程 ></div>
                             </td>
-                            <td>B</td>
-                            <td>C</td>
+                            <td>
+                            	<div class="jui-main-dataitem"><span id="jui-main-yxfje">1000</span>.<span class="jui-main-datasfont">00</span></div>
+                                <div class="jui-main-databtn">月消费金额 ></div>
+                            </td>
+                            <td>
+                            	<div class="jui-main-dataitem">￥<span id="jui-main-kjcje">800<span>.<span class="jui-main-datasfont">00</span></div>
+                                <div class="jui-main-databtn">可圈存金额 ></div>
+                            </td>
                         </tr>
                     </table>
                     </div>                
@@ -102,7 +100,7 @@
                         </td>
                         <td>
                         	<div class="jui-main-menuwrap">
-                            	<img src="lib/img/icon_menu_kpgl.png"/>
+                            	<img src="lib/img/icon_menu_txjl.png"/>
                             </div>
                         </td>
                         <td>
@@ -113,8 +111,8 @@
                     </tr>
                     <tr>
                     	<td>
-                        	<div class="jui-main-menuwrap">
-                            	<img src="lib/img/icon_menu_txjl.png"/>
+                            <div class="jui-main-menuwrap">
+                            	<img src="lib/img/icon_menu_kpgl.png"/>
                             </div>
                         </td>
                         <td>
