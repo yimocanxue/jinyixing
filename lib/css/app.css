@@ -10,9 +10,24 @@
 
 
 /*===========首页核心内容区============*/
-.jui-main-wrap{ width:100%; height:334px;font-family:jfont;}
+.jui-main-wrap{ width:100%; height:266px;font-family:jfont;}
 /*天气看板栏*/
-.jui-main-weather{width:100%; height:30%; background:url(../img/bg_main_tq.png);background-size:auto 100%; overflow:hidden; }
+.jui-main-weather{width:100%; height:30%; background:url(../img/bg_main_tq.png);background-size:auto 100%; overflow:hidden; color:#fff; }
+.jui-main-weather table{ width:100%; height:100%;}
+.jui-main-weather table td:first-child{ width:74%;}
+.jui-main-weather table td:last-child{ width:26%;}
+.jui-main-weather-info{ width:100%; display:flex; display:-webkit-flex;flex-flow:column nowrap; -webkit-flex-flow:column nowrap; align-items:stretch; -webkit-align-items:stretch; height:80px;}
+.jui-main-weather-pic{flex:45 1 36px;-webkit-flex:45 1 36px;padding-left: 3%; font-size:18px;padding-top:5px;}
+.jui-main-weather-pic img{ height:32px;}
+.jui-main-weather-temp{flex:30 1 24px;-webkit-flex:30 1 24px; overflow:hidden;font-size: 16px;padding-left: 5%;padding-top: 8px;}
+.jui-main-oil-price{flex:25 1 24px;-webkit-flex:25 1 24px; overflow:hidden;  font-size: 12px;padding-left: 5%;padding-top: 3px;}
+
+.jui-main-wash-index{display:flex; display:-webkit-flex;flex-flow:column nowrap; -webkit-flex-flow:column nowrap; align-items:stretch; -webkit-align-items:stretch; height:100px;}
+.jui-main-city{flex:22 1 22px;-webkit-flex:22 1 22px; font-size:16px; text-align:right; padding-right:10%;}
+.jui-main-wash-pic{flex:60 1 60px;-webkit-flex:60 1 60px; text-align:center;}
+.jui-main-wash-pic img{ height:60px;}
+.jui-main-wash-dot{flex:18 1 18px;-webkit-flex:18 1 18px;text-align:center}
+.jui-main-wash-dot img{ height:12px;}
 
 /*首页卡片*/
 .jui-main-card{width:100%; height:37%; background:#f0f0f0;}
@@ -44,23 +59,67 @@
 .jui-main-menuwrap img{ height:80%;}
 @media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone4/4s */
 #jui-main-nav td{height:80px;}
-.jui-main-wrap{height:266px;}
 .jui-main-headimg img{ width:70px; height:70px;border-radius:70px;}
 .jui-main-data{ font-size:20px;}
 .jui-main-databtn{padding-bottom:5px; font-size:12px;}
+
+.jui-main-weather-pic{padding-left: 3%; font-size:18px;padding-top:3px;}
+.jui-main-weather-temp{padding-left: 5%; padding-top:4px; font-size:16px;}
+.jui-main-oil-price{font-size:12px; padding-left:5%; padding-top:2px;}
+
+.jui-main-wash-index{height:80px;}
+.jui-main-city{flex:20 1 16px;-webkit-flex:20 1 16px; font-size:14px;padding-right:18%;}
+.jui-main-wash-pic{flex:60 1 48px;-webkit-flex:60 1 48px;}
+.jui-main-wash-pic img{ height:48px;}
+.jui-main-wash-dot{flex:20 1 16px;-webkit-flex:16 1 16px;}
+.jui-main-wash-dot img{ height:10px;}
+
+}
+
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){/*iphone5/5s */
+.jui-main-wrap{height:334px;}
+.jui-main-weather-info{ height:100px;}
+.jui-main-weather-pic img{ height:38px;}
 }
 
 @media (device-height:667px) and (-webkit-min-device-pixel-ratio:2){/*iphone6 */
 #jui-main-nav td{height:115px;}
 .jui-main-wrap{height:383px;}
+.jui-main-weather-info{ height:115px;}
+.jui-main-weather-pic img{ height:42px;}
+
 .jui-main-headimg img{ width:90px; height:90px;border-radius:90px;}
+
+.jui-main-weather-pic{font-size:22px;}
+.jui-main-weather-temp{padding-top:8px; font-size:18px;}
+
+.jui-main-wash-index{height:115px;}
+.jui-main-city{flex:22 1 25px;-webkit-flex:22 1 25px; padding-right:16%; padding-top:3px;}
+.jui-main-wash-pic{flex:60 1 69px;-webkit-flex:60 1 69px;}
+.jui-main-wash-pic img{ height:69px;}
+.jui-main-wash-dot{flex:18 1 21px;-webkit-flex:18 1 21px;}
+.jui-main-wash-dot img{ height:15px;}
+
 }
 
 @media (device-height:736px) and (-webkit-min-device-pixel-ratio:3){/*iphone6p */
 #jui-main-nav td{height:128px;}
 .jui-main-wrap{height:426px;}
+.jui-main-weather-info{ height:115px;}
+.jui-main-weather-pic img{ height:50px;}
 .jui-main-headimg img{ width:110px; height:110px;border-radius:110px;}
 .jui-main-data{ font-size:25px;}
+
+.jui-main-weather-pic{padding-left: 3%; font-size:24px;padding-top:3px;}
+.jui-main-weather-temp{padding-left: 5%; padding-top:12px; font-size:22px;}
+.jui-main-oil-price{font-size:14px; padding-top:10px;}
+
+.jui-main-wash-index{height:128px;}
+.jui-main-city{flex:22 1 28px;-webkit-flex:22 1 28px; padding-right:16%; padding-top:5px;}
+.jui-main-wash-pic{flex:60 1 77px;-webkit-flex:60 1 77px;}
+.jui-main-wash-pic img{ height:77px;}
+.jui-main-wash-dot{flex:18 1 23px;-webkit-flex:18 1 23px;}
+.jui-main-wash-dot img{ height:15px;}
 }
 
 

@@ -55,7 +55,35 @@
             <div class="panel" id="main" data-title="">
 				
                 <div class="jui-main-wrap">
-  					<div class="jui-main-weather"></div>
+  					<div class="jui-main-weather">
+                    	<table>
+                        	<tr>
+                            	<td>
+                                	<div class="jui-main-weather-info">
+                                    	<div class="jui-main-weather-pic">
+                                        	<img src="lib/img/weather/icon_qing.png"/>
+                                            <span>晴天</span>
+                                        </div>
+                                        <div class="jui-main-weather-temp">25°/31°</div>
+                                        <div class="jui-main-oil-price">今日油价：92# 6.69元/L  95# 7.25元/L</div>
+                                    </div>
+                                </td>
+                                <td>
+                                	<div class="jui-main-wash-index">
+                                    	<div class="jui-main-city">南昌</div>
+                                        <div class="jui-main-wash-pic"><img src="lib/img/icon_pic_xc.png"/></div>
+                                        <div class="jui-main-wash-dot">
+                                        <img src="lib/img/icon_pic_dot_white.png"/>
+                                        <img src="lib/img/icon_pic_dot_white.png"/>
+                                        <img src="lib/img/icon_pic_dot_white.png"/>
+                                        <img src="lib/img/icon_pic_dot_white.png"/>
+                                        <img src="lib/img/icon_pic_dot_gray.png"/>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                     <div class="jui-main-card">
                         <table>
                             <tr>
@@ -94,34 +122,34 @@
                 <table id="jui-main-nav"  cellspacing="1">
                 	<tr>
                     	<td>
-                            <div class="jui-main-menuwrap">
+                            <div class="jui-main-menuwrap jui-nav" data-elid="plugins" data-clr="e0e0e0">
                             	<img src="lib/img/icon_menu_wycz.png"/>
                             </div>
                         </td>
                         <td>
-                        	<div class="jui-main-menuwrap">
+                        	<div class="jui-main-menuwrap jui-nav" data-clr="e0e0e0">
                             	<img src="lib/img/icon_menu_txjl.png"/>
                             </div>
                         </td>
                         <td>
-                        	<div class="jui-main-menuwrap">
+                        	<div class="jui-main-menuwrap jui-nav" data-clr="e0e0e0">
                             <img src="lib/img/icon_menu_yzd.png"/>
                             </div>
                         </td>
                     </tr>
                     <tr>
                     	<td>
-                            <div class="jui-main-menuwrap">
+                            <div class="jui-main-menuwrap jui-nav" data-clr="e0e0e0">
                             	<img src="lib/img/icon_menu_kpgl.png"/>
                             </div>
                         </td>
                         <td>
-                        	<div class="jui-main-menuwrap">
+                        	<div class="jui-main-menuwrap jui-nav" data-clr="e0e0e0">
                             	<img src="lib/img/icon_menu_gsfl.png"/>
                             </div>
                         </td>
                         <td>
-                        	<div class="jui-main-menuwrap" style="position:relative;">
+                        	<div class="jui-main-menuwrap jui-nav" data-clr="e0e0e0" style="position:relative;">
                                 <img src="lib/img/icon_menu_wdxx.png"/>
                                 <span class="af-badge">5</span>
                             </div>
@@ -152,7 +180,7 @@
         
         
         <!--侧边菜单开始-->
-        <nav id="subnav"  style="z-index:5" data-include="partials/subnav.html"></nav>
+        <nav id="subnav"  style="z-index:5; height:568px;" data-include="partials/subnav.html"></nav>
         <!--侧边菜单结束-->
         
     </div>
