@@ -41,7 +41,7 @@
         	<div class="jui-header-logo">
             	<img src="lib/img/logo_name.png" height="35" />
             </div>
-            <h1></h1>
+            <h1 id="jui-header-title"></h1>
             <div class="jui-header-menubtn">
             	<a href="javascript:void(0)"><img src="lib/img/icon_menu_more.png" height="20" /></a>
             </div>
@@ -52,7 +52,7 @@
         <!--主内容区开始-->
         <div class="pages">
         
-            <div class="panel" id="main" data-title="">
+            <div class="panel" id="jui-main" data-title="">
 				
                 <div class="jui-main-wrap">
   					<div class="jui-main-weather">
@@ -101,7 +101,7 @@
                     <div class="jui-main-data">
                       <table cellspacing="1">
                         <tr>
-                            <td>
+                            <td onClick="javascript:showAccountMileagePage()">
                             	<div class="jui-main-dataitem">1400km</div>
                                 <div class="jui-main-databtn">月总里程 ></div>
                             </td>
@@ -122,13 +122,13 @@
                 <table id="jui-main-nav"  cellspacing="1">
                 	<tr>
                     	<td>
-                            <div class="jui-main-menuwrap jui-nav" data-elid="plugins" data-clr="e0e0e0">
+                            <div class="jui-main-menuwrap jui-nav" data-elid="jui-recharge-select-card" data-clr="e0e0e0">
                             	<img src="lib/img/icon_menu_wycz.png"/>
                             </div>
                         </td>
                         <td>
-                        	<div class="jui-main-menuwrap jui-nav" data-clr="e0e0e0">
-                            	<img src="lib/img/icon_menu_txjl.png"/>
+                        	<div class="jui-main-menuwrap jui-nav" data-elid="jui-card-billlist"  data-clr="e0e0e0">
+                            	<img src="lib/img/icon_menu_ykmx.png"/>
                             </div>
                         </td>
                         <td>
@@ -160,27 +160,404 @@
                 
             </div>
             
-            <div data-left-drawer="left" class="panel" id="plugins" data-title="plugins" >
-                <ul class="list">
-                    <li><a href="#login" data-transition="up-reveal">Login View (modal)</a></li>
-                    <li><a href="#drawer" >Drawer</a></li>
-                    <li><a href="ajax.html" >Ajax</a></li>
-                    <li><a href="#toast" >Toast</a></li>
-                    <li><a href="#popup" >Popup</a></li>
-                    <li><a href="#actionsheet">Actionsheet</a></li>
-                    <li><a href="#lockscreen" >Lockscreen</a></li>
-                    <li><a href="#cards">cards</a></li>
-                </ul>
+            <!--充值页面开始-->
+            <div class="panel" id="jui-recharge-select-card" data-title="充值">           	
+				<table id="jui-recharge-main">
+                	<tr>
+                    	<td height="20%">卡号：1213123***22443</td>
+                    </tr>
+                    <tr>
+                    	<td height="47%">
+                        	<div id="jui-recharge-cardarea" style="position:relative;">
+                            	<table>
+                                	<tr>
+                                    	<td height="35%" style="text-align:left; vertical-align:bottom">持卡人：*润</td>
+                                    </tr>
+                                    <tr>
+                                    	<td height="30%" style="text-align:left;">可圈存金额：￥0.00元</td>
+                                    </tr>
+                                    <tr>
+                                    	<td height="35%" style="text-align:left; vertical-align:top;">交易状态：<span class="jui-recharge-status">先去转账</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td height="33%"><img src="lib/img/icon_step1.png" height="60"/></td>
+                    </tr>
+                </table>
+                <div class="jui-recharge-btn">
+                	<div class="jui-btn-left jui-nav" data-bg="bg_btn_left_hover.png"><img src="lib/img/icon_btn_back.png"/>返回</div>
+                    <div class="jui-btn-right jui-nav" data-elid="jui-recharge-select-fee" data-bg="bg_btn_right_hover.png"><img src="lib/img/icon_rchge.png" style="margin-right:5px;"/>转账</div>
+                </div>
             </div>
+            <!--充值页面结束-->
+            
+            <!--充值选择金额开始-->
+            <div class="panel" id="jui-recharge-select-fee" data-title="选择充值金额">           	              
+                <div id="jui-recharge-fee-main">
+                	<div id="jui-recharge-sellebal">充值金额：</div>
+                	<div id="jui-recharge-select">
+                    	<select>
+                        	<option value="100">100</option>
+                            <option value="200">200</option>
+                            <option value="300">300</option>
+                            <option value="400">400</option>
+                            <option value="500" selected>500</option>
+                            <option value="600">600</option>
+                            <option value="700">700</option>
+                            <option value="800">800</option>
+                            <option value="900">900</option>
+                            <option value="1000">1000</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="jui-recharge-btn">
+                	<div class="jui-btn-left jui-nav" data-bg="bg_btn_left_hover.png"><img src="lib/img/icon_btn_cancel.png"/>取消</div>
+                    <div class="jui-btn-right jui-nav" data-elid="jui-recharge-result" data-bg="bg_btn_right_hover.png"><img src="lib/img/icon_btn_next.png" style="margin-right:5px;"/>下一步</div>
+                </div>
+            </div>
+			<!--充值选择金额结束-->
+            
+            <!--充值结果页开始-->
+            <div class="panel" id="jui-recharge-result" data-title="转账成功">           	              
+    			
+                <table id="jui-recharge-result-main">
+                	<tr class="jui-recharge-tr-1">
+                    	<td>
+                        	<img src="lib/img/icon_step2.png" width="100%"/>
+                        </td>
+                    </tr>
+                    <tr class="jui-recharge-tr-2"><td>转账成功</td></tr>
+                    <tr class="jui-recharge-tr-3"><td>2015-05-18 17:18:00</td></tr>
+                    <tr class="jui-recharge-tr-4">
+                    	<td height="60%" style="vertical-align:top;">
+                        	<table id="jui-result-list">
+                            	<tr height="20%">
+                                	<td>订单号：GV12321312312</td>
+                                </tr>
+                                <tr height="20%">
+                                	<td>持卡人：*润</td>
+                                </tr>
+                                <tr height="20%">
+                                	<td>卡号：23432432***3324</td>
+                                </tr>
+                                <tr height="20%">
+                                	<td>可圈存金额：￥500</td>
+                                </tr height="20%">
+                                <tr height="20%">
+                                	<td>交易状态：<span class="jui-recharge-status">等待圈存</span></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <div class="jui-recharge-btn">
+                	<div class="jui-btn-left jui-nav" data-bg="bg_btn_left_hover.png"><img src="lib/img/icon_btn_back.png"/>返回</div>
+                    <div class="jui-btn-right jui-nav" data-elid="jui-quancun-connect" data-bg="bg_btn_right_hover.png"><img src="lib/img/icon_btn_qc.png" style="margin-right:5px;"/>圈存</div>
+                </div>
+            </div>
+			<!--充值结果页结束-->
+            
+            
+           <!--圈存连接设置页开始-->
+            <div class="panel" id="jui-quancun-connect" data-title="转账圈存">           	                  			
+                <table id="jui-quancun-connect-main">
+                	<tr class="jui-quancun-connect-tr-1">
+                    	<td width="26%" align="right" valign="bottom">
+                        	<div class="jui-quancun-coning jui-quancun-rotate">
+                            	<img src="lib/img/icon_connect.png" />
+                            </div>
+                        </td>
+                        <td width="74%" valign="bottom" style="padding-bottom:12px; padding-left:5px;">设备连接中...</td>
+                    </tr>
+                    <tr class="jui-quancun-connect-tr-2">
+                        <td width="26%" align="right" valign="bottom" style="position:relative;">
+                        	<div class="jui-quancun-line"></div>
+                        </td>
+                        <td width="74%" valign="bottom" style="padding-bottom:12px; padding-left:5px;">
+                        	<table style="height:100%; width:90%;">
+                            	<tr height="25%" style="line-height:22px; vertical-align:top">
+                                	<td>
+                                    	1、请把卡插入两次;<br/>
+                                        2、屏幕显示SEARCH...
+                                    </td>
+                                </tr>
+                                <tr height="75%" style="vertical-align:top;">
+                                	<td>
+                                    	<img src="lib/img/anim_con_1.gif" width="100%" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="jui-quancun-connect-tr-3">
+                    <td width="26%" align="right" valign="top" style="position:relative;">
+                        	<div class="jui-quancun-coning">
+                            	<img src="lib/img/icon_qccycle.png" />
+                            </div>
+                        </td>
+                        <td width="74%" valign="bottom" style="padding-bottom:12px; padding-left:5px;"></td>
+                    </tr>
+                    
+                </table>
+                <div class="jui-recharge-btn">
+                	<div class="jui-btn-left" data-bg="bg_btn_left_hover.png" onClick="showPopup3()"><img src="lib/img/icon_btn_back.png"/>取消</div>
+                    <div class="jui-btn-right jui-nav" data-bg="bg_btn_right_hover.png"><img src="lib/img/icon_btn_qc.png" style="margin-right:5px;"/>重试</div>
+                </div>
+            </div>
+			<!--圈存连接设置页结束-->
+            <script type="text/javascript">
+            	function showPopup3() {
+					$.afui.popup({
+						title: "连接出错！",
+						message: "<span class='jui-popup-main'><img src='lib/img/icon_wifi.png'/ width='150'><br/><br/>完事具备，只欠网络<br/>请检查您的网络设置。</span>",
+						cancelText: "取消",
+						cancelCallback: function () {
+							alert('取消')
+						},
+						doneText: "再试一次",
+						doneCallback: function () {
+							alert("再试一次")
+						},
+						cancelOnly: false
+					});
+				}
+            </script>
+            
+            
+            
+            <!--月总里程统计页开始-->
+            <div class="panel" id="jui-account-mileage" data-title="月总里程统计">                       	                  			
+                <table id="jui-account-mileage-main">
+                	<tr class="jui-account-mileage-tr-1">
+                    	<td valign="middle">
+                        	<div class="jui-account-mileage-chart">
+                            
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="jui-account-mileage-tr-2">
+                        <td style="padding-left:20px;">
+                        	高速行驶总里程<span>880km</span><br/>
+                            通过收费站<span>100个</span><br/>
+                            月均行驶<span>300km</span>
+                        </td>
+                    </tr>
+                    <tr class="jui-account-mileage-tr-3">
+                    	<td>
+                        	<div class="jui-btn-share">
+                            	<img src="lib/img/icon_share.png" />分享到朋友圈
+                            </div>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </div>
+			<!--月总里程统计页结束-->
+            
+            
+            <!--卡片明细页开始-->
+            <div class="panel" id="jui-card-billlist" data-title="卡片明细">                       	                  			
+                <div class="jui-button-tab" style="position:fixed; top:44px; width:100%; z-index:100;">
+                    <a class="btn btn_pressed">卡片明细</a>
+                    <a class="btn">通行记录</a>
+                    <a class="btn">充值记录</a>
+                </div>
+                <table class="jui-card-info" style="position:fixed; top:83px; width:100%; z-index:100;">
+                	<tr>
+                    	<td align="center"><img src="lib/img/pic_card.png" /></td>
+                        <td valign="bottom">卡号：123123****1232</td>
+                    </tr>
+                </table>
 
+				<table class="jui-card-itemlist" cellpadding="0" cellspacing="0"  style=" margin-top:100px;">
+                	
+                    
+                    <tr class="jui-card-itemtr">
+                    	<td>
+                        2015/5/7
+                        <div class="jui-card-cycle"></div>
+                        </td>
+                        <td>
+                        	<div class="jui-card-item">
+                             	<div class="jui-card-arrow1"></div>
+                             	<div class="jui-card-arrow2"></div>
+                             	<div class="jui-card-item-main">
+                                	<div class="jui-card-itemfee">
+                                    	<span>-13</span><span>.00</span><span> 通行费</span>
+                                    	<span>0.00</span><span>本次优惠</span>
+                                    </div>
+                                    <div class="jui-card-eninfo">入口：2015/5/7 14:20 黄埔大道</div>
+                                    <div class="jui-card-exitinfo">出口：2015/5/7 15:30 宝安大道</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    
+                    <tr class="jui-card-itemtr item-orange ">
+                    	<td>
+                        2015/5/7
+                        <div class="jui-card-cycle"></div>
+                        </td>
+                        <td>
+                        	<div class="jui-card-item">
+                             	<div class="jui-card-arrow1"></div>
+                             	<div class="jui-card-arrow2"></div>
+                             	<div class="jui-card-item-main">
+                                	<div class="jui-card-itemfee">
+                                    	<span>+300</span><span>.00</span><span> 空中充值</span>
+                                    </div>
+                                    <div class="jui-card-rchinfo">2015/5/7 14:20 充值成功</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                   
+                   <tr class="jui-card-itemtr">
+                    	<td>
+                        2015/5/7
+                        <div class="jui-card-cycle"></div>
+                        </td>
+                        <td>
+                        	<div class="jui-card-item">
+                             	<div class="jui-card-arrow1"></div>
+                             	<div class="jui-card-arrow2"></div>
+                             	<div class="jui-card-item-main">
+                                	<div class="jui-card-itemfee">
+                                    	<span>-13</span><span>.00</span><span> 通行费</span>
+                                    	<span>0.00</span><span>本次优惠</span>
+                                    </div>
+                                    <div class="jui-card-eninfo">入口：2015/5/7 14:20 黄埔大道</div>
+                                    <div class="jui-card-exitinfo">出口：2015/5/7 15:30 宝安大道</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="jui-card-itemtr">
+                    	<td>
+                        2015/5/7
+                        <div class="jui-card-cycle"></div>
+                        </td>
+                        <td>
+                        	<div class="jui-card-item">
+                             	<div class="jui-card-arrow1"></div>
+                             	<div class="jui-card-arrow2"></div>
+                             	<div class="jui-card-item-main">
+                                	<div class="jui-card-itemfee">
+                                    	<span>-13</span><span>.00</span><span> 通行费</span>
+                                    	<span>0.00</span><span>本次优惠</span>
+                                    </div>
+                                    <div class="jui-card-eninfo">入口：2015/5/7 14:20 黄埔大道</div>
+                                    <div class="jui-card-exitinfo">出口：2015/5/7 15:30 宝安大道</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr class="jui-card-itemtr">
+                    	<td>
+                        2015/5/7
+                        <div class="jui-card-cycle"></div>
+                        </td>
+                        <td>
+                        	<div class="jui-card-item">
+                             	<div class="jui-card-arrow1"></div>
+                             	<div class="jui-card-arrow2"></div>
+                             	<div class="jui-card-item-main">
+                                	<div class="jui-card-itemfee">
+                                    	<span>-13</span><span>.00</span><span> 通行费</span>
+                                    	<span>0.00</span><span>本次优惠</span>
+                                    </div>
+                                    <div class="jui-card-eninfo">入口：2015/5/7 14:20 黄埔大道</div>
+                                    <div class="jui-card-exitinfo">出口：2015/5/7 15:30 宝安大道</div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                   
+                </table>
+                
+                
+            </div>
+			<!--卡片明细页结束-->
+            <script type="text/javascript">
+            	$(function(){
+					$("#jui-card-billlist").find(".jui-button-tab a").bind('tap',function(){
+						alert($(this).html())
+					});
+				});
+            
+            </script>
+            
+
+
+            
+            
         </div>
         <!--主内容区开始-->
+        
+<script type="text/javascript">
+	
+	function showAccountMileagePage(){
+	
+		$('.jui-account-mileage-chart').highcharts({
+			title: {
+				text: '高速公路里程统计/月',
+				x: 10 //center
+			},
+	
+			xAxis: {
+				categories: ['1月', '2月', '3月', '4月', '5月', '6月']
+			},
+			yAxis: {
+				title: {
+					text: '公里数/km'
+				},
+				plotLines: [{
+					value: 0,
+					width: 1,
+					color: '#808080'
+				}]
+			},
+			legend: {
+				enabled: false
+			},
+			credits:{
+				enabled:false
+			},
+			tooltip: {
+				valueSuffix: 'km'
+			},
+			plotOptions: {
+				line: {
+					dataLabels: {
+						enabled: true
+					},
+					enableMouseTracking: false
+				}
+			},
+			series: [{
+				color:'#00a0e9',
+				data: [300, 100, 80, 350, 600, 240]
+			}]
+		});
+		//$("text[text-anchor='end']").remove();
+		 $.afui.loadContent("#jui-account-mileage",false,false);
+		 pubObj.showCommonPageBackbtn('jui-account-mileage');
+	}
+	
+
+	</script>        
         
       
         
         
         <!--侧边菜单开始-->
-        <nav id="subnav"  style="z-index:5; height:568px;" data-include="partials/subnav.html"></nav>
+        <nav id="subnav"  style="z-index:5;" data-include="partials/subnav.html"></nav>
         <!--侧边菜单结束-->
         
     </div>

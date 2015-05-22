@@ -1,11 +1,19 @@
 @charset "UTF-8";
 /* CSS Document */
 @font-face{font-family: jfont;src: url('../font/zzgf.otf');}
-#main{ padding:0; font-family:'微软雅黑';}
+#jui-main{ padding:0; font-family:'微软雅黑';}
+.jui-popup-main{ color:#999; line-height:22px;}
 
+.jui-button-tab{display: -webkit-flex;display: flex; box-sizing: border-box;margin:0; background:#fff;}
+.jui-button-tab > .btn {border-radius: 0;color: #888;font-family: jfont;-webkit-flex: 1 auto;flex: 1 auto;white-space: nowrap;overflow: hidden;text-overflow: ellipsis; text-align:center; height:39px; line-height:39px; border-bottom:1px solid #e0e0e0; border-right:1px solid #e0e0e0;}
+.jui-button-tab > .btn:last-child{ border-right:none;}
+.jui-button-tab > .btn_pressed {color: #00a0e9; background: #f2fbff;border-bottom: 5px solid #00a0e9;}
+
+  
+ 
 
 /*===========公共头部============*/
-.jui-header-logo{position:absolute; left:8%; top:auto;width:60%; height:44px; line-height:70px;}
+.jui-header-logo{position:absolute; left:4%; top:auto;width:60%; height:44px; line-height:65px;}
 .jui-header-menubtn{ position:absolute; right:1%; top:auto; height:44px; line-height:54px; width:50px; text-align:center;}
 
 
@@ -57,6 +65,104 @@
 #jui-main-nav td:nth-child(2){ width:34%;}
 .jui-main-menuwrap{ width:100%; height:100%;}
 .jui-main-menuwrap img{ height:80%;}
+
+
+
+
+
+/*=============充值页开始===============*/
+#jui-recharge-main{width:100%; height:70%; font-family:jfont;}
+#jui-recharge-main td{ text-align:center;}
+#jui-recharge-main tr:first-child{font-size: 16px; color:#5d5d5d;}
+#jui-recharge-main img{ width:204px;}
+#jui-recharge-cardarea{width:255px; height:170px; margin:0 auto; background:url(../img/bg_card.png);background-size:100% 100%; position:relative; font-size:12px;}
+#jui-recharge-cardarea table{width:100%; height:100px;position:absolute; bottom:0; height:50%;}
+#jui-recharge-cardarea table td{ padding-left:8%; color:#595959; font-size:14px;}
+.jui-recharge-status{ color:#00a0e9;}
+.jui-recharge-btn{ width:100%; height:70px; position:fixed; bottom:0;}
+.jui-btn-left{ float:left; width:50%; height:70px; line-height:70px; text-align:center; background:url(../img/bg_btn_left.png) no-repeat; overflow:hidden; border-right:1px solid #FFF; font-size:20px; color:#fff;text-shadow:1px 1px 0 #000000;}
+.jui-btn-right{ float:left; width:50%; height:70px; line-height:70px; text-align:center;background:url(../img/bg_btn_right.png) no-repeat; overflow:hidden; border-left:1px solid #888; color:#00a0e9; font-size:20px;}
+.jui-btn-left img,.jui-btn-right img{ height:30px; vertical-align:middle;}
+.jui-btn-right img{ margin-right:8px;}
+
+
+/*=================选择充值金额==================*/
+#jui-recharge-fee-main{ width:80%; margin-top:30%; margin-left:50%; transform:translate(-50%,0);-webkit-transform:translate(-50%,0); height:200px; background:url(../img/bg_select_fee.png);background-size:100% 100%; position:relative; font-family:jfont;}
+#jui-recharge-select{ position:absolute; top:50%; right:0; margin-right:3%;height:40px; width:57%;transform:translate(0,-50%);-webkit-transform:translate(0,-50%);}
+#jui-recharge-select select{ border:none; color: #00a0e9; font-size:30px; padding:0 0 0 35%;}
+#jui-recharge-sellebal{position:absolute; top:50%; left:0; height:40px; line-height:40px; width:43%;transform:translate(0,-50%);-webkit-transform:translate(0,-50%);color: #00a0e9; font-size:20px; text-align:center;}
+
+/*================充值结果====================*/
+#jui-recharge-result-main{ height:80%; border:1px solid #FFF; font-family:jfont;}
+#jui-recharge-result-main td{ text-align:center; vertical-align:middle;}
+#jui-recharge-result-main .jui-recharge-tr-1{ height:20%;}
+#jui-recharge-result-main .jui-recharge-tr-2{ height:10%; font-size:34px; color:#000;}
+#jui-recharge-result-main .jui-recharge-tr-3{ height:10%; font-size:16px; color:#595959;}
+#jui-recharge-result-main .jui-recharge-tr-4{height:60%; vertical-align:top;color:#595959;}
+
+#jui-result-list{width:80%; height:100%; border:1px solid #555; margin-left:50%;transform:translate(-50%,0);-webkit-transform:translate(-50%,0); border-radius:5px; padding:10px;}
+#jui-result-list tr{ height:20%;}
+#jui-result-list td{font-size:14px; color:#595959; text-align:left;}
+
+
+/*==============圈存连接设备rz3vk:8H================*/
+#jui-quancun-connect-main{ width:100%; height:80%; font-family:jfont;}
+.jui-quancun-connect-tr-1{ height:15%; font-size:18px;}
+.jui-quancun-connect-tr-2{ height:60%;}
+.jui-quancun-connect-tr-3{ height:25%;}
+.jui-quancun-coning{ height:40px; width:40px;}
+.jui-quancun-coning img{ height:35px; height:35px; vertical-align:bottom;}
+
+
+/*============月总里程统计===========================*/
+#jui-account-mileage-main{ width:100%; height:80%; font-family:jfont;}
+.jui-account-mileage-tr-1{ height:50%; font-size:18px; background:#fff; text-align:center;}
+.jui-account-mileage-tr-2{ height:30%; vertical-align:central; line-height:25px; color:#707070;}
+.jui-account-mileage-tr-2 span{ font-size:20px; color:#00a0e9; padding-left:5px;}
+.jui-account-mileage-tr-3{ height:20%;}
+.jui-account-mileage-chart{ width:100%; height:200px; overflow:hidden;}
+.jui-btn-share{ height:40px; width:86%; line-height:40px; margin:10px auto; border-radius:5px; border:1px solid #00a0e9; text-align:center; color:#00a0e9; background:#fff; color:#00a0e9; font-size:18px; font-family:'微软雅黑';}
+.jui-btn-share img{ height:30px; vertical-align:middle; margin-right:3px;}
+@-webkit-keyframes rotate{
+0%{ -webkit-transform:rotate(0deg);}
+100%{-webkit-transform:rotate(360deg);}
+}
+.jui-quancun-rotate img{-webkit-animation:rotate 1s linear infinite;}
+.jui-quancun-line{ width:18px; height:105%; border-left:3px solid #7c7c7c; position:absolute; top:-8px; right:0;}
+
+
+/*============用卡明细===========================*/
+#jui-card-billlist-main{ width:100%; height:80%; font-family:jfont;}
+.jui-card-info{ width:100%;margin:0; height:14%; background:#fff;font-family:jfont;}
+.jui-card-info td{ color:#5d5d5d;}
+.jui-card-info td:last-child{ vertical-align:bottom; padding-bottom:13px;}
+.jui-card-info img{ width:120px;}
+.jui-card-itemlist{ width:100%; font-family:jfont; color:#888;}
+.jui-card-itemlist td{ height:80px; position:relative;}
+.jui-card-itemlist td:nth-child(2n-1){ width:20%; border-right:2px solid #fff; font-size:12px; text-align:center;}
+.jui-card-itemlist td:nth-child(2n){ width:80%; vertical-align:bottom;}
+
+
+.jui-card-itemtr .jui-card-cycle{ width:10px; height:10px; border-radius:10px; background:#00a0e9; position:absolute; right:-5px; top:50%;transform:translate(0,-50%);-webkit-transform:translate(0,-50%);}
+.item-orange .jui-card-cycle{background:#ff8c02; }
+.jui-card-itemtr .jui-card-item{ width:80%; height:85%;position:relative;}
+.jui-card-itemtr .jui-card-arrow1{ width: 0;height: 0; border-top: 20px solid transparent;border-right: 20px solid #00a0e9; border-bottom: 1px solid transparent; position:absolute; top:5px; left:5px;}
+.item-orange .jui-card-arrow1{border-right-color:#ff8c02;}
+.jui-card-itemtr .jui-card-arrow2{ width: 0;height: 0; border-top: 18px solid transparent;border-right: 20px solid #fff; border-bottom: 1px solid transparent;position:absolute; top:6px; left:7px; z-index:1;}
+.jui-card-itemtr .jui-card-item-main{ position: absolute; left:20px; border:1px solid #00a0e9; background:#fff; border-radius:5px; height:100%; width:220px; padding:5px;}
+.item-orange .jui-card-item-main{ border-color:#ff8c02;}
+.jui-card-itemfee{ margin-bottom:5px;} 
+.jui-card-itemfee span:first-child{ font-size:16px;color:#00a0e9;}
+.jui-card-itemfee span:nth-child(2){color:#00a0e9; font-size:12px;}
+.jui-card-itemfee span:nth-child(3){font-size:12px;}
+.jui-card-itemfee span:nth-child(4){font-size:12px; float:right;color:#00a0e9;}
+.jui-card-itemfee span:nth-child(5){font-size:12px; float:right;}
+.jui-card-eninfo, .jui-card-exitinfo{ font-size:12px;}
+
+.item-orange .jui-card-itemfee span:first-child{color:#ff8c02;}
+.item-orange .jui-card-itemfee span:nth-child(2){color:#ff8c02;}
+.jui-card-rchinfo{ margin-top:15px;}
+
 @media (device-height:480px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone4/4s */
 #jui-main-nav td{height:80px;}
 .jui-main-headimg img{ width:70px; height:70px;border-radius:70px;}
@@ -74,12 +180,16 @@
 .jui-main-wash-dot{flex:20 1 16px;-webkit-flex:16 1 16px;}
 .jui-main-wash-dot img{ height:10px;}
 
+.jui-card-info{height:16%;}
+.jui-card-info td:last-child{padding-bottom:10px;}
+
 }
 
 @media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){/*iphone5/5s */
 .jui-main-wrap{height:334px;}
 .jui-main-weather-info{ height:100px;}
 .jui-main-weather-pic img{ height:38px;}
+
 }
 
 @media (device-height:667px) and (-webkit-min-device-pixel-ratio:2){/*iphone6 */
@@ -100,6 +210,18 @@
 .jui-main-wash-dot{flex:18 1 21px;-webkit-flex:18 1 21px;}
 .jui-main-wash-dot img{ height:15px;}
 
+#jui-recharge-main tr:first-child{font-size: 20px;}
+#jui-recharge-cardarea{height:202px; width:303px;}
+#jui-recharge-main img{ width:242px; height:75px}
+
+#jui-result-list{ height:80%;}
+
+.jui-quancun-line{ height:103%;}
+
+.jui-card-info{height:13%;}
+.jui-card-info img{ width:140px;}
+
+.jui-card-itemtr .jui-card-item-main{width:250px;}
 }
 
 @media (device-height:736px) and (-webkit-min-device-pixel-ratio:3){/*iphone6p */
@@ -120,6 +242,18 @@
 .jui-main-wash-pic img{ height:77px;}
 .jui-main-wash-dot{flex:18 1 23px;-webkit-flex:18 1 23px;}
 .jui-main-wash-dot img{ height:15px;}
+
+#jui-recharge-main tr:first-child{font-size: 20px;}
+#jui-recharge-cardarea{height:225px; width:337px;}
+#jui-recharge-main img{ width:270px; height:82px}
+
+#jui-result-list{ height:80%;}
+.jui-quancun-line{ height:103%;}
+
+.jui-card-info{height:12%;}
+.jui-card-info img{ width:150px;}
+
+.jui-card-itemtr .jui-card-item-main{width:280px;}
 }
 
 
