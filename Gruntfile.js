@@ -196,20 +196,20 @@ module.exports = function(grunt){
         copy:{
             main:{
                 files:[
-                    {expand:true,src:'lib/*',dest:'built/'},
+                    {expand:true,src:'lib/*',dest:'built/'}
                 ]
             }
         },
 
         imagemin: {
             options:{
-                optimizationLevel:5,
+                optimizationLevel:5
             },
             dynamic: {
                 files: [{
                     expand: true,
                     cwd: 'dev/lib/img',
-                    src: ['*.{png,jpg,gif}'],
+                    src: ['*.{png,jpg,gif}','**/*.{png,jpg,gif}'],
                     dest: 'build/lib/img/'
                 }]
             }
@@ -221,7 +221,7 @@ module.exports = function(grunt){
                 src: 'build/index.html',
                 dest: 'build/',
                 options: {
-                    beautify: false,
+                    beautify: true,
                     //prefix: '',
                     relative: true,
                     styles: {
@@ -235,6 +235,7 @@ module.exports = function(grunt){
                 }
             }
         },
+
 
         //清理合并后多余的文件
         clean: {
@@ -256,6 +257,7 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-html-build');
+
 
     //自定义任务
     grunt.registerTask('live',['watch']);
