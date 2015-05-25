@@ -3,15 +3,27 @@ requirejs.config({
 
     baseUrl:'lib',
     paths:{
-        public:'app/public',
-        jquery:'vender/jquery.min'
+        'public':'app/public',
+        'jquery':'vender/jquery.min',
+        'fastclick':'vender/fastclick',
+        'highcharts':'vender/highcharts',
+        'af.actionsheet':'plugin/af.actionsheet',
+        'af.animation':'plugin/af.animation',
+        'af.touchEvents':'plugin/af.touchEvents',
+        'af.popup':'plugin/af.popup',
+        'af.drawer':'plugin/af.drawer',
+        'af.toast':'plugin/af.toast',
+        'af.animateheader':'plugin/af.animateheader',
+        'af.splashscreen':'plugin/af.splashscreen',
+        'af.swipereveal':'plugin/af.swipereveal',
+        'af.lockscreen':'plugin/af.lockscreen'
     },
 
     shim:{
-        'vender/fastclick':{
+        'fastclick':{
             exports:'fastclick'
         },
-        'vender/highcharts':{
+        'highcharts':{
             deps:['jquery'],
             exports:'highcharts'
         },
@@ -23,45 +35,45 @@ requirejs.config({
             deps:['jquery'],
             exports:'af.ui'
         },
-        'plugin/af.actionsheet':{
+        'af.actionsheet':{
             deps:['jquery','af.ui'],
             exports:'af.actionsheet'
         },
-        'plugin/af.animation':{
+        'af.animation':{
             deps:['jquery','af.ui'],
             exports:'af.animation'
         },
-        'plugin/af.touchEvents':{
+        'af.touchEvents':{
             deps:['jquery','af.ui'],
             exports:'af.touchEvents'
         },
-        'plugin/af.popup':{
+        'af.popup':{
             deps:['jquery','af.ui'],
             exports:'af.popup'
         },
-        'plugin/af.drawer':{
+        'af.drawer':{
             deps:['jquery','af.ui'],
             exports:'af.drawer'
         },
-        'plugin/af.toast':{
+        'af.toast':{
             deps:['jquery','af.ui'],
             exports:'af.toast'
         },
 
-        'plugin/af.animateheader':{
+        'af.animateheader':{
             deps:['jquery','af.ui'],
             exports:'af.animateheader'
         },
 
-        'plugin/af.splashscreen':{
+        'af.splashscreen':{
             deps:['jquery','af.ui'],
             exports:'af.splashscreen'
         },
-        'plugin/af.swipereveal':{
+        'af.swipereveal':{
             deps:['jquery','af.ui'],
             exports:'af.swipereveal'
         },
-        'plugin/af.lockscreen':{
+        'af.lockscreen':{
             deps:['jquery','af.ui'],
             exports:'af.lockscreen'
         }
@@ -72,20 +84,20 @@ requirejs.config({
 
 var modules = [
                 'jquery',
-                'vender/fastclick',
+                'fastclick',
                 'af.shim',
                 'af.ui',
-                'plugin/af.actionsheet',
-                'plugin/af.touchEvents',
-                'plugin/af.animation',
-                'plugin/af.popup',
-                'plugin/af.drawer',
-                'plugin/af.toast',
-                'plugin/af.animateheader',
-                'plugin/af.splashscreen',
-                'plugin/af.swipereveal',
-                'vender/highcharts',
-                'app/public'
+                'af.actionsheet',
+                'af.touchEvents',
+                'af.animation',
+                'af.popup',
+                'af.drawer',
+                'af.toast',
+                'af.animateheader',
+                'af.splashscreen',
+                'af.swipereveal',
+                'highcharts',
+                'public'
             ];
 
 requirejs(modules,function($,fastclick,afshim,afui,actionsheet,touchEvents,animation,popup,drawer,toast,animateheader,splashscreen,swipereveal,highcharts,pubObj){
