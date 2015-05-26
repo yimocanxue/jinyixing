@@ -17,6 +17,7 @@ requirejs.config({
         'af.splashscreen':'plugin/af.splashscreen',
         'af.swipereveal':'plugin/af.swipereveal',
         'af.lockscreen':'plugin/af.lockscreen'
+
     },
 
     shim:{
@@ -103,13 +104,33 @@ var modules = [
 requirejs(modules,function($,fastclick,afshim,afui,actionsheet,touchEvents,animation,popup,drawer,toast,animateheader,splashscreen,swipereveal,highcharts,pubObj){
 
     $.afui.useOSThemes=false;		//是否使用系统内置主题 如果要使用自定义主题必须设置为false且在$(document).ready()之前设置
-    $.afui.loadDefaultHash=true;	//APP启动时从hash纪录中打开页面
+    $.afui.loadDefaultHash=false;	//APP启动时从hash纪录中打开页面
     $.afui.autoLaunch=false;        //采用手动初始化ui，使得加载动画可以执行
-    $.afui.setBackButtonVisibility(false);
 
 	$(function(){
+
+        //手动初始化afui
         $.afui.launch();
-        pubObj.initSet();
+
+        //转场时启动header动画效果
+        $.afui.animateHeader(true);
+
+        //设置样式主题
+        $(document.body).get(0).className = 'ios';
+
+        //绑定侧边菜单按钮
+        pubObj.bindSubMenu();
+        //绑定主页导航事件
+        pubObj.bindMainNavgation();
+
+        //主页隐藏footer导航
+        pubObj.setFooterHidden(true);
+
+        //绑定主页的pannel载入事件，把头部返回按钮换成logo
+        pubObj.resetLogoArea();
+
+        //绑定返回按钮事件
+        pubObj.setBackButtonHandle();
 	});
 
 });

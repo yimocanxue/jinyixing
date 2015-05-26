@@ -2460,6 +2460,7 @@ li .icon:before {
   color: inherit;
   border: none;
   border-bottom: 1px solid #00a0e9;
+  height:64px;
 }
 .ios .view header .button {
   color: #157dfb;
@@ -2473,6 +2474,7 @@ li .icon:before {
   left:20%;
   text-shadow: none;
   text-align:left;
+  top:20px;
 }
 .ios .view header .backButton {
   background: #f8f8f8;
@@ -2500,13 +2502,29 @@ li .icon:before {
   margin: 0 !important;
 }
 .ios .view footer {
-  background: #f8f8f8;
-  color: black;
-  border-top: 1px solid #c8c7cc;
   box-shadow: none;
+  border:none;
+  height:70px;
+  background:url(../img/bg_footer.png) repeat-x;
 }
-.ios .view footer > a:not(.button) {
-  color: #606060;
+.ios .view footer > a{
+  color: #fff;
+  line-height:70px;
+  padding-top:0;
+  font-size:20px;
+  text-shadow: 1px 1px 0 #000000;
+}
+.ios .view footer > a.active{
+  color: #00a0e9;
+  text-shadow:none;
+}
+.ios .view footer > a:first-child{
+	border-right:1px solid #FFF;
+}
+
+.ios .view footer > a img{
+	height:30px;
+	vertical-align:middle;
 }
 .ios .view footer > a.pressed:not(.button) {
   border-radius: 0;

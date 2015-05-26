@@ -26,7 +26,7 @@
 
 <body>
     
-    <!--加载动画开始-->
+    <!--加载动画开始--
     <div id="splashscreen" class='ui-loader heavy'>
         金易行
         <br>
@@ -35,7 +35,7 @@
         <h1>载入中...</h1>
 
     </div>
-    <!--加载动画结束-->
+    --加载动画结束-->
     
     
     <!--主内容区开始 包含公共的header footer 和pages（包含多个pannel）-->
@@ -122,12 +122,22 @@
                     </table>
                     </div>                
                 </div>
-  				
+  				<!--
+                 *	连接自动绑定说明：
+                 *  class属性带jui-nav的会自动绑定事件
+                 *  data-elid：点击要跳转的pannel ID，当为#back时表示返回
+                 *  data-footer：是否显示footer导航 yes或no 默认no
+                 *  data-clr：点击时交互变化背景色
+                 *  data-bg：点击时交互变化背图片变化
+                 *  data-event：绑定事件名称，默认“tap”
+                 *	data-fun:绑定的事件触发时会被执行的函数
+                 *  data-params:点击时被传递到下个pannel的参数字符串，如id=1&val=8
+                -->
                 <!--首页主导航开始-->
                 <table id="jui-main-nav"  cellspacing="1">
                 	<tr>
                     	<td>
-                            <div class="jui-main-menuwrap jui-nav" data-elid="jui-recharge-select-card" data-clr="e0e0e0">
+                            <div class="jui-main-menuwrap jui-nav" data-elid="jui-recharge-select-card" data-footer="yes" data-clr="e0e0e0">
                             	<img src="lib/img/icon_menu_wycz.png"/>
                             </div>
                         </td>
@@ -162,7 +172,7 @@
                     </tr>
                 </table>
                 <!--首页主导航结束-->
-                
+				<div class="jui-shim"></div>
             </div>
             
             <!--充值页面开始-->
@@ -192,10 +202,7 @@
                     	<td height="33%"><img src="lib/img/icon_step1.png" height="60"/></td>
                     </tr>
                 </table>
-                <div class="jui-recharge-btn">
-                	<div class="jui-btn-left jui-nav" data-bg="bg_btn_left_hover.png"><img src="lib/img/icon_btn_back.png"/>返回</div>
-                    <div class="jui-btn-right jui-nav" data-elid="jui-recharge-select-fee" data-bg="bg_btn_right_hover.png"><img src="lib/img/icon_rchge.png" style="margin-right:5px;"/>转账</div>
-                </div>
+                <div class="jui-shim"></div>
             </div>
             <!--充值页面结束-->
             
@@ -218,10 +225,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="jui-recharge-btn">
-                	<div class="jui-btn-left jui-nav" data-bg="bg_btn_left_hover.png"><img src="lib/img/icon_btn_cancel.png"/>取消</div>
-                    <div class="jui-btn-right jui-nav" data-elid="jui-recharge-result" data-bg="bg_btn_right_hover.png"><img src="lib/img/icon_btn_next.png" style="margin-right:5px;"/>下一步</div>
-                </div>
+                <div class="jui-shim"></div>
             </div>
 			<!--充值选择金额结束-->
             
@@ -258,10 +262,6 @@
                         </td>
                     </tr>
                 </table>
-                <div class="jui-recharge-btn">
-                	<div class="jui-btn-left jui-nav" data-bg="bg_btn_left_hover.png"><img src="lib/img/icon_btn_back.png"/>返回</div>
-                    <div class="jui-btn-right jui-nav" data-elid="jui-quancun-connect" data-bg="bg_btn_right_hover.png"><img src="lib/img/icon_btn_qc.png" style="margin-right:5px;"/>圈存</div>
-                </div>
             </div>
 			<!--充值结果页结束-->
             
@@ -307,10 +307,6 @@
                     </tr>
                     
                 </table>
-                <div class="jui-recharge-btn">
-                	<div class="jui-btn-left" data-bg="bg_btn_left_hover.png" onClick="showPopup3()"><img src="lib/img/icon_btn_back.png"/>取消</div>
-                    <div class="jui-btn-right jui-nav" data-bg="bg_btn_right_hover.png"><img src="lib/img/icon_btn_qc.png" style="margin-right:5px;"/>重试</div>
-                </div>
             </div>
 			<!--圈存连接设置页结束-->
             <script type="text/javascript">
@@ -541,14 +537,17 @@
 		});
 		//$("text[text-anchor='end']").remove();
 		 $.afui.loadContent("#jui-account-mileage",false,false);
-		 pubObj.showCommonPageBackbtn('jui-account-mileage');
+		 //pubObj.showCommonPageBackbtn('jui-account-mileage');
 	}
 	
 
 	</script>        
         
       
-        
+        <footer>
+            <a class="jui-nav" data-elid="#back" ><img src="lib/img/icon_btn_cancel.png" />返回</a>
+            <a href="#plugins" class="active">圈存</a>
+        </footer>
         
         <!--侧边菜单开始-->
         <nav id="subnav"  style="z-index:5;" data-include="partials/subnav.html"></nav>

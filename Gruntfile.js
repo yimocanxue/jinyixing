@@ -32,6 +32,25 @@ module.exports = function(grunt){
 
                     mainConfigFile: 'dev/lib/app.js',
 
+                    paths:{
+                        'public':'app/public',
+                        'jquery':'vender/jquery.min',
+                        'fastclick':'vender/fastclick',
+                        'highcharts':'vender/highcharts',
+                        'af.actionsheet':'plugin/af.actionsheet',
+                        'af.animation':'plugin/af.animation',
+                        'af.touchEvents':'plugin/af.touchEvents',
+                        'af.popup':'plugin/af.popup',
+                        'af.drawer':'plugin/af.drawer',
+                        'af.toast':'plugin/af.toast',
+                        'af.animateheader':'plugin/af.animateheader',
+                        'af.splashscreen':'plugin/af.splashscreen',
+                        'af.swipereveal':'plugin/af.swipereveal',
+                        'af.lockscreen':'plugin/af.lockscreen',
+
+                        //自定义模块
+                        'juiRechargeSelectCardLib':'app/juiRechargeSelectCardLib'
+                    },
 
                     modules: [
                         {
@@ -39,11 +58,12 @@ module.exports = function(grunt){
                             include:[
                                 'jquery','fastclick', 'af.shim', 'af.ui', 'af.actionsheet', 'af.touchEvents',
                                 'af.animation', 'af.popup', 'af.drawer', 'af.toast', 'af.animateheader',
-                                'af.splashscreen', 'af.swipereveal', 'highcharts', 'public'
+                                'af.splashscreen', 'af.swipereveal', 'highcharts'
+                            ],
+                            //级联依赖
+                            excludeShallow: [
+                                "public"
                             ]
-                        },
-                        {
-                            name: 'app/public'
                         }
                     ],
 
@@ -192,11 +212,14 @@ module.exports = function(grunt){
 
         },
 
+        //ios工程www目录
+        iosWebRoot:'/Users/xuhui/workspace/development/jyx/platforms/ios/www',
+
         //发布html
         copy:{
             main:{
                 files:[
-                    {expand:true,src:'lib/*',dest:'built/'}
+                    {expand:true,cwd:'build/',src:['*','**/*','**/**/*'],dest:'<%= iosWebRoot %>'}
                 ]
             }
         },
@@ -237,11 +260,17 @@ module.exports = function(grunt){
         },
 
 
-        //清理合并后多余的文件
+
         clean: {
-            js: ["build/lib/plugin" , "build/lib/vender","build/lib/af.ui.js", "build/lib/af.shim.js"],
-            css:["build/lib/css/*.css","!build/lib/css/jinyixing.css"],
-            other:["build/build.txt","build/lib/img"]
+            build_before:{
+                all:["build/*","<%= iosWebRoot %>/index.html","<%= iosWebRoot %>/lib","<%= iosWebRoot %>/partials"]
+            },
+            //清理合并后多余的文件
+            build_after:{
+                js: ["build/lib/plugin" , "build/lib/vender","build/lib/af.ui.js", "build/lib/af.shim.js"],
+                css:["build/lib/css/*.css","!build/lib/css/jinyixing.css"],
+                other:["build/build.txt","build/lib/img",'<%= iosWebRoot %>/build.txt']
+            }
         }
 
 
@@ -261,7 +290,7 @@ module.exports = function(grunt){
 
     //自定义任务
     grunt.registerTask('live',['watch']);
-    grunt.registerTask('default',['htmlmin','requirejs','clean','imagemin']);
+    grunt.registerTask('default',['clean:build_before','htmlmin','requirejs','copy','clean:build_after']);
 
 
 }
