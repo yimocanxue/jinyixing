@@ -4,6 +4,7 @@ requirejs.config({
     baseUrl:'lib',
     paths:{
         'public':'app/public',
+        'util':'app/util',
         'jquery':'vender/jquery.min',
         'fastclick':'vender/fastclick',
         'highcharts':'vender/highcharts',
@@ -98,10 +99,11 @@ var modules = [
                 'af.splashscreen',
                 'af.swipereveal',
                 'highcharts',
-                'public'
+                'public',
+                'util'
             ];
 
-requirejs(modules,function($,fastclick,afshim,afui,actionsheet,touchEvents,animation,popup,drawer,toast,animateheader,splashscreen,swipereveal,highcharts,pubObj){
+requirejs(modules,function($,fastclick,afshim,afui,actionsheet,touchEvents,animation,popup,drawer,toast,animateheader,splashscreen,swipereveal,highcharts,pubObj,util){
 
     $.afui.useOSThemes=false;		//是否使用系统内置主题 如果要使用自定义主题必须设置为false且在$(document).ready()之前设置
     $.afui.loadDefaultHash=false;	//APP启动时从hash纪录中打开页面
@@ -113,7 +115,7 @@ requirejs(modules,function($,fastclick,afshim,afui,actionsheet,touchEvents,anima
         $.afui.launch();
 
         //转场时启动header动画效果
-        $.afui.animateHeader(true);
+        $.afui.animateHeader(false);
 
         //设置样式主题
         $(document.body).get(0).className = 'ios';
@@ -131,6 +133,8 @@ requirejs(modules,function($,fastclick,afshim,afui,actionsheet,touchEvents,anima
 
         //绑定返回按钮事件
         pubObj.setBackButtonHandle();
+
+
 	});
 
 });
