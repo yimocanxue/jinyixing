@@ -19,6 +19,7 @@ define(['util'],function(util){
             module.getDataList(cardno,0);
 
             util.setShimHegith(panelId);
+            util.switchHeader(panelId);
             $.afui.loadContent("#"+panelId,false,false);
 
             //页面卸载时隐藏固定表头

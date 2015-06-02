@@ -9,6 +9,8 @@ define(['util'],function(util){
 
         load:function(){
             util.setShimHegith(panelId);
+            util.switchHeader(panelId);
+
             this.loadCharts();
             $.afui.loadContent("#"+panelId,false,false);
         },

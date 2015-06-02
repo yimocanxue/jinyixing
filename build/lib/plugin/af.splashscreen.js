@@ -1,0 +1,1 @@
+(function($){"use strict";$.afui.ready(function(){setTimeout(function(){$("#splashscreen").remove()},250)})})(jQuery);

@@ -6,6 +6,7 @@
 var publicDependenceModules = [
         'util',
         'app/juiRechargeSelectCardLib',
+        'app/juiRechargeSelectFeeLib',
         'app/juiCardBilllistLib',
         'app/juiLoginLib',
         'app/juiRegistLib',
@@ -26,6 +27,7 @@ var publicDependenceModules = [
 define(publicDependenceModules,function(
                             util,
                             juiRechargeSelectCardLib,
+                            juiRechargeSelectFeeLib,
                             juiCardBilllistLib,
                             juiLoginLib,
                             juiRegistLib,
@@ -63,7 +65,8 @@ define(publicDependenceModules,function(
             $("#"+mainPanel).bind('panelload',function(){
                 //隐藏footer
                 thisObj.setFooterHidden(true);
-                thisObj.switchHeader(mainPanel);
+                util.switchHeader(mainPanel);
+                $("#jui-header-title").html('');
             });
         },
         //显示或隐藏footer
@@ -109,23 +112,12 @@ define(publicDependenceModules,function(
 
                     //决定是否显示底部导航
                     obj.setFooterHidden(isfooter == 'yes' ? false : true);
-                    //设置返回导航位置显示按钮还是logo
-                    obj.switchHeader(targetElementID);
 
                 });
 
             });
         },
-        switchHeader:function(elem){
-            if(elem != 'jui-main'){
-                $("#header-main").hide();
-                $("#header-common").css({'height':'64px','borderBottomWidth':0}).show();
-            }else{
-                $("#header-common").hide();
-                $("#header-main").show();
-            }
 
-        },
         loadJuiPage:function(elem){
             var moduleName = util.getModuleNameByElem(elem);
             eval(moduleName+".load()");

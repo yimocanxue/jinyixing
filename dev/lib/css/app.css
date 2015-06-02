@@ -22,12 +22,7 @@
  
 
 /*===========公共头部============*/
-#header-common{ display:none;}
-#header-main{background: url(../img/bg_header.png) repeat-x;color: inherit;border: none;border-bottom: 1px solid #00a0e9;height: 64px;position: relative;overflow: hidden;display: block;z-index: 250;-webkit-box-sizing: border-box;box-sizing: border-box;left: 0;right: 0;} 
-
-#jui-header-logo{position:absolute; left:0;top:20px;width:60%; height:44px; line-height:65px; background-image:url(../img/logo_name.png); background-repeat:no-repeat; background-size:auto 35px; background-position:12px center;}
-
-#jui-header-back{position:absolute; left:0; top:20px;width:25%; height:44px; line-height:65px; background-image:url(../img/icon_back.png); background-repeat:no-repeat; background-position: 12px center; background-size:28px 44px;}
+#jui-header-back{position:absolute; left:0; top:20px;width:25%; height:44px; line-height:65px; background-image:url(../img/icon_back.png); background-repeat:no-repeat; background-position: -12px center; background-size:28px 44px; padding-left:12px;}
 
 .jui-header-menubtn{ position:absolute; right:1%; top:20px; height:44px; line-height:54px; width:50px; text-align:center;}
 .jui-shim{ width:100%; height:0px; background:none;/*每个pannel内都增加一个让页面滚动高度，避免页面整体滚动*/}

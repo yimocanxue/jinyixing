@@ -43,7 +43,9 @@
         
         <!--公共头部开始-->
         <header id="header-common">
-        	<div id="jui-header-back"></div>
+        	<div id="jui-header-back">
+            	<img src="lib/img/logo_name.png" height="35"/>
+            </div>
             <h1 id="jui-header-title"></h1>
             <div class="jui-header-menubtn">
             	<a href="javascript:void(0)"><img src="lib/img/icon_menu_more.png" height="20" /></a>
@@ -55,14 +57,7 @@
         <!--主内容区开始-->
         <div class="pages">
         
-            <div class="panel" id="jui-main" data-title="" style="overflow:hidden;">
-                <div id="header-main">
-                    <div id="jui-header-logo"></div>
-                    <div class="jui-header-menubtn">
-                        <a href="javascript:void(0)"><img src="lib/img/icon_menu_more.png" height="20" /></a>
-                    </div>
-                </div>   
-                
+            <div class="panel" id="jui-main" data-title="">
                 <div class="jui-main-wrap">
   					<div class="jui-main-weather">
                     	<table>
@@ -303,26 +298,7 @@
                 </table>
                 <div class="jui-shim"></div>
             </div>
-			<!--圈存连接设置页结束-->
-            <script type="text/javascript">
-            	function showPopup3() {
-					$.afui.popup({
-						title: "连接出错！",
-						message: "<span class='jui-popup-main'><img src='lib/img/icon_wifi.png'/ width='150'><br/><br/>完事具备，只欠网络<br/>请检查您的网络设置。</span>",
-						cancelText: "取消",
-						cancelCallback: function () {
-							alert('取消')
-						},
-						doneText: "再试一次",
-						doneCallback: function () {
-							alert("再试一次")
-						},
-						cancelOnly: false
-					});
-				}
-            </script>
-            
-            
+			<!--圈存连接设置页结束-->            
             
             <!--月总里程统计页开始-->
             <div class="panel" id="jui-account-mileage" data-title="月总里程统计">                       	                  			

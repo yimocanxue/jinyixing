@@ -134,7 +134,6 @@ requirejs(modules,function($,fastclick,afshim,afui,actionsheet,touchEvents,anima
         //绑定返回按钮事件
         pubObj.setBackButtonHandle();
 
-
 	});
 
 });

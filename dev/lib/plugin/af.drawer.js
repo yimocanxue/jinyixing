@@ -17,10 +17,6 @@
             var item=$(elem).closest(".view").children().filter(":not(nav):not(aside)");
             position=position||activePosition;
             for(var i=0;i<item.length;i++){
-
-                if($(item[i]).attr('id') == 'header-common' && $(item[i]).is(':hidden')){
-                    $(item[i]).css({'height':'0','borderBottomWidth':0});
-                }
                 var anim=$(item[i]).show().animation();
                 if(reverse){
                     anim.remove("slide-"+position+"-out").reverse();
@@ -86,10 +82,10 @@
                 //卡片明细页增加动画
                 if($("#jui-card-billlist-patch-tab").is(':visible')){
                     $("#jui-card-billlist-patch-tab").animate({
-                        right: "200px"
+                        right: "205px"
                     }, 300,'linear' );
                     $("#jui-card-billlist-patch-card").animate({
-                        right: "200px"
+                        right: "205px"
                     }, 300,'linear');
                 }
 

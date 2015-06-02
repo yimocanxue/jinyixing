@@ -1,0 +1,1 @@
+define(["util"],function(util){var panelId="jui-topspeed-rate";return{load:function(){return!1}}});

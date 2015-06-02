@@ -10,6 +10,7 @@ define(['require','util'],function(require,util){
 
             var module = this;
             util.setShimHegith(panelId);
+            util.switchHeader(panelId);
             $.afui.loadContent("#"+panelId,false,false);
 
 

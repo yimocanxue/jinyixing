@@ -1,0 +1,1 @@
+define(["util"],function(util){var panelId="jui-account-month";return{load:function(){return!1}}});

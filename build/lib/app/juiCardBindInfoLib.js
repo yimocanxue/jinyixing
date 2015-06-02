@@ -1,0 +1,1 @@
+define(["util"],function(util){var panelId="jui-card-bind-info";return{load:function(){util.setShimHegith(panelId),util.switchHeader(panelId),$.afui.loadContent("#"+panelId,!1,!1)}}});
